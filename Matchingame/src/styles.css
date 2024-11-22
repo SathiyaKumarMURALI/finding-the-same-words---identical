@@ -1,0 +1,106 @@
+body {
+    background-color: #eee;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+  
+header {
+    background-color: #f8f8f8;
+    padding: 1em;
+    text-align: center;
+}
+  
+h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.button-container button {
+    margin: 0.1em;
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+}
+  
+.card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0.5em;
+    position: relative;
+    width: calc(25% - 1em);
+    height: 0;
+    padding-bottom: calc(25% - 1em);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.card-text {
+    line-height: 100%;
+    vertical-align: middle;
+    font-style:oblique;
+    text-shadow: #f8f8f8;
+
+}
+
+.card .front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://fastly.picsum.photos/id/24/4855/1803.jpg?hmac=ICVhP1pUXDLXaTkgwDJinSUS59UWalMxf4SOIWb9Ui4');
+    background-size: cover;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+  
+.card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #b7bbbe;
+    background-image: url('https://fastly.picsum.photos/id/74/4288/2848.jpg?hmac=q02MzzHG23nkhJYRXR-_RgKTr6fpfwRgcXgE0EKvNB8');
+    background-size: 100% 100%;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card.match {
+    border: 2px solid green;
+    background-color: greenyellow;
+    box-sizing: border-box;
+}
+.card.flip:not(.match) {
+    border: 2px solid orange;
+    background-color: orangered;
+    box-sizing: border-box; 
+}
